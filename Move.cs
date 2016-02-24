@@ -16,10 +16,10 @@ namespace Escape
             if (UseHP == 1)
             {
 
-                hpUsed = moves + " Steps till freeze        That warmed you up!   " + hp + " Heat Pack remaining ";
+                hpUsed = moves + " Steps till freeze     That warmed you up!   " + hp + " Heat Packs remaining ";
             }
             else
-                hpUsed = moves + " Steps till freeze                              " + hp + " Heat Pack remaining ";
+                hpUsed = moves + " Steps till freeze                           " + hp + " Heat Packs remaining ";
 
 
             // First Line
