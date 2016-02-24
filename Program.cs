@@ -93,9 +93,9 @@ namespace Escape
 
             int player = settings.MyNumber;
             int x = 50;
-            
+            int heatpack = 3;
 
-            Move.move(player, x, HW, VW, Torch, Exit);
+            Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
 
 
             NEXTMOVE:;
@@ -115,15 +115,35 @@ namespace Escape
                     &&  key != System.ConsoleKey.RightArrow
                     &&  key != System.ConsoleKey.Q
                     &&  Convert.ToChar(key) != Convert.ToChar("q")
-                    &&  key != System.ConsoleKey.B)
+                    &&  key != System.ConsoleKey.B
+                    &&  key == System.ConsoleKey.H 
+                    &&  Convert.ToChar(key) == Convert.ToChar("h"))
                 {
                     goto NEXTMOVE;
                 }
                 #endregion
 
+                #region <Heat Pack>
+
+                if ((key == System.ConsoleKey.H || Convert.ToChar(key) == Convert.ToChar("h")) && heatpack != 0)
+
+                {
+                    Console.Clear();
+                    heatpack --;
+                    x = 50;
+                    Move.move(player, x, 1, heatpack, HW, VW, Torch, Exit);
+                    goto NEXTMOVE;
+                }
+
+                if ((key == System.ConsoleKey.H || Convert.ToChar(key) == Convert.ToChar("h")) && heatpack == 0)
+                {
+                    goto NEXTMOVE;
+                }
+                    #endregion
+
                 #region <Move Down> 
 
-                if (key == System.ConsoleKey.DownArrow)
+                    if (key == System.ConsoleKey.DownArrow)
 
                 {
                     Console.Clear();
@@ -139,26 +159,26 @@ namespace Escape
                         player = player + 1;
                         settings.Save();
                         x += 1;
-                        Move.move(player, x, HW, VW, Torch, Exit);
+                        Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                         goto NEXTMOVE;
                     }
                     if (Torchexists == true)
                     {
                         x = 50;
                         settings.Save();
-                        Move.move(player, x, HW, VW, Torch, Exit);
+                        Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                         goto NEXTMOVE;
                     }
                     if (Exitexists == true)
                     {
                         settings.Save();
-                        Move.move(player, x, HW, VW, Torch, Exit);
+                        Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                         goto WON;
                     }
 
                     else
                     settings.Save();
-                    Move.move(player, x, HW, VW, Torch, Exit);
+                    Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                     goto NEXTMOVE;
                 }
 
@@ -180,19 +200,19 @@ namespace Escape
                         player = player + 1000;
                         settings.Save();
                         x += 1;
-                        Move.move(player, x, HW, VW, Torch, Exit);
+                        Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                         goto NEXTMOVE;
                     }
                     if (Torchexists == true)
                     {
                         x = 50;
                         settings.Save();
-                        Move.move(player, x, HW, VW, Torch, Exit);
+                        Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                         goto NEXTMOVE;
                     }
                     else
                         settings.Save();
-                    Move.move(player, x, HW, VW, Torch, Exit);
+                    Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                     goto NEXTMOVE;
                 }
                 #endregion
@@ -213,19 +233,19 @@ namespace Escape
                         player = player -1;
                         settings.Save();
                         x += 1;
-                        Move.move(player, x, HW, VW, Torch, Exit);
+                        Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                         goto NEXTMOVE;
                     }
                     if (Torchexists == true)
                     {
                         x = 50;
                         settings.Save();
-                        Move.move(player, x, HW, VW, Torch, Exit);
+                        Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                         goto NEXTMOVE;
                     }
                     else
                         settings.Save();
-                    Move.move(player, x, HW, VW, Torch, Exit);
+                    Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                     goto NEXTMOVE;
                 }
                 #endregion
@@ -246,19 +266,19 @@ namespace Escape
                         player = player - 1000;
                         settings.Save();
                         x += 1;
-                        Move.move(player, x, HW, VW, Torch, Exit);
+                        Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                         goto NEXTMOVE;
                     }
                     if (Torchexists == true)
                     {
                         x = 50;
                         settings.Save();
-                        Move.move(player, x, HW, VW, Torch, Exit);
+                        Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                         goto NEXTMOVE;
                     }
                     else
                         settings.Save();
-                    Move.move(player, x, HW, VW, Torch, Exit);
+                    Move.move(player, x, 0, heatpack, HW, VW, Torch, Exit);
                     goto NEXTMOVE;
 
                   }

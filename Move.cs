@@ -8,8 +8,18 @@ namespace Escape
 {
     class Move
     {
-        public static void move(int player, int moves, List<int> HW, List<int> VW, List<int> Torch, List<int> Exit)
+        public static void move(int player, int moves, int UseHP, int hp, List<int> HW, List<int> VW, List<int> Torch, List<int> Exit)
         {
+            string hpUsed;
+           
+
+            if (UseHP == 1)
+            {
+
+                hpUsed = moves + " Steps till freeze        That warmed you up!   " + hp + " Heat Pack remaining ";
+            }
+            else
+                hpUsed = moves + " Steps till freeze                              " + hp + " Heat Pack remaining ";
 
 
             // First Line
@@ -241,7 +251,7 @@ namespace Escape
             Console.WriteLine("< Move using a,w,s,d  or quit using q                      >");
             Console.WriteLine("< Use torches Y to keep you warm while you find the exit O >");
             Console.WriteLine("                         ");
-            Console.WriteLine("{0} Steps till freeze", moves);
+            Console.WriteLine(hpUsed);
             Console.WriteLine("                      ");
             
             Console.WriteLine("          {0}{1}{2}{3}{4}          ", A1, A2, A3, A4, A5);
