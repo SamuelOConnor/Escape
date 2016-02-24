@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace Escape
 {
@@ -99,17 +100,31 @@ namespace Escape
 
             NEXTMOVE:;
 
-            char key = Convert.ToChar("p");
+            System.ConsoleKey key = System.ConsoleKey.B;
 
-            key = Console.ReadKey(true).KeyChar;
+            key = Console.ReadKey(true).Key;
 
 
             while (x != 0)
             {
 
+                #region <Invalid Key pushed>
+                if (    key  != System.ConsoleKey.DownArrow
+                    &&  key != System.ConsoleKey.UpArrow
+                    &&  key != System.ConsoleKey.LeftArrow
+                    &&  key != System.ConsoleKey.RightArrow
+                    &&  key != System.ConsoleKey.Q
+                    &&  Convert.ToChar(key) != Convert.ToChar("q")
+                    &&  key != System.ConsoleKey.B)
+                {
+                    goto NEXTMOVE;
+                }
+                #endregion
+
                 #region <Move Down> 
 
-                if (key == Convert.ToChar("s") || key == Convert.ToChar("S"))
+                if (key == System.ConsoleKey.DownArrow)
+
                 {
                     Console.Clear();
                     x--;
@@ -151,7 +166,7 @@ namespace Escape
 
                 #region <Move Left> 
 
-                if (key == Convert.ToChar("a") || key == Convert.ToChar("A"))
+                if (key == System.ConsoleKey.LeftArrow)
                 {
                     Console.Clear();
                     x--;
@@ -184,7 +199,7 @@ namespace Escape
 
                 #region <Move Up> 
 
-                if (key == Convert.ToChar("w") || key == Convert.ToChar("W"))
+                if (key == System.ConsoleKey.UpArrow)
                 {
                     Console.Clear();
                     x--;
@@ -216,8 +231,8 @@ namespace Escape
                 #endregion
 
                 #region <Move Right>
-                 
-                if (key == Convert.ToChar("d") || key == Convert.ToChar("D"))
+
+                if (key == System.ConsoleKey.RightArrow)
                 {
                     Console.Clear();
                     x--;
@@ -252,7 +267,7 @@ namespace Escape
 
                 #region <Quit Premature>
 
-                if (key == Convert.ToChar("q") || key == Convert.ToChar("Q"))
+                if (key == System.ConsoleKey.Q || Convert.ToChar(key) == Convert.ToChar("q"))
                 {
                     Console.WriteLine("Quitting, Thanks for playing!");
                     Console.WriteLine("");
@@ -272,19 +287,20 @@ namespace Escape
             
             while (2 != v)
             {
-                
-                
-                char key2 = Convert.ToChar("p");
-                key2 = Console.ReadKey(true).KeyChar;
 
-                if (key2 == Convert.ToChar("r") || key == Convert.ToChar("R"))
+
+                System.ConsoleKey key2 = System.ConsoleKey.B;
+
+                key2 = Console.ReadKey(true).Key;
+
+                if (key2 == System.ConsoleKey.R || Convert.ToChar(key2) == Convert.ToChar("r"))
                 {
                     Console.Clear();
                     player = 100100;
                     trys++;
                     goto START;
                 }
-                if (key2 == Convert.ToChar("q") || key == Convert.ToChar("Q"))
+                if (key2 == System.ConsoleKey.Q || Convert.ToChar(key2) == Convert.ToChar("q"))
                 {
 
                     Console.WriteLine("");
@@ -311,17 +327,18 @@ namespace Escape
             {
 
 
-                char key2 = Convert.ToChar("p");
-                key2 = Console.ReadKey(true).KeyChar;
+                System.ConsoleKey key3 = System.ConsoleKey.B;
 
-                if (key2 == Convert.ToChar("r") || key == Convert.ToChar("R"))
+                key3 = Console.ReadKey(true).Key;
+
+                if (key3 == System.ConsoleKey.R || Convert.ToChar(key3) == Convert.ToChar("r"))
                 {
                     Console.Clear();
                     player = 100100;
                     trys = 0;
                     goto START;
                 }
-                if (key2 == Convert.ToChar("q") || key == Convert.ToChar("Q"))
+                if (key3 == System.ConsoleKey.Q || Convert.ToChar(key3) == Convert.ToChar("q"))
                 {
 
                     Console.WriteLine("");
