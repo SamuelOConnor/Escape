@@ -12,7 +12,8 @@ This is my first C# creation. I'd like to use this as a tool to eccelerate my de
 
 1.0.1.1 readability 
 
--- Small edit to help code readability 
+-- Changed 
+- Small edit to help code readability 
 
 1.0.2.0 Added new feature!
 
