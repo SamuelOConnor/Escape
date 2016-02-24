@@ -10,7 +10,9 @@ This is my first C# creation. I'd like to use this as a tool to eccelerate my de
 - Changed the move keys from wasd to the arrow keys
 - Added in a catch to stop invalid keys breaking the game
 
-1.0.1.1 Small edit to help code readability 
+1.0.1.1 readability 
+
+-- Small edit to help code readability 
 
 1.0.2.0 Added new feature!
 
