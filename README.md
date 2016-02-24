@@ -1,7 +1,10 @@
 # Escape
-My First Game! Escape!
+1.0.0.0 My First Game! Escape!
 
 This is my first C# creation. I'd like to use this as a tool to eccelerate my development skills and eventually produce something fun and impressive at the end!
 
 
-First Edit!
+1.0.0.1 First Branch Merged!
+- Changed 
+  Changed the move keys from wasd to the arrow keys
+  Added in a catch to stop invalid keys breaking the game
