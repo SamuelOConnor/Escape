@@ -287,10 +287,21 @@ namespace Escape
             while (2 != v)
             {
 
+                INVAILDKEY:;
 
                 System.ConsoleKey key2 = System.ConsoleKey.B;
 
                 key2 = Console.ReadKey(true).Key;
+
+                
+                if (    Convert.ToChar(key2) != Convert.ToChar("q")
+                    &&  Convert.ToChar(key2) != Convert.ToChar("r")
+                    &&  key2 != System.ConsoleKey.R
+                    &&  key2 != System.ConsoleKey.Q
+                    &&  key2 != System.ConsoleKey.B)
+                {
+                    goto INVAILDKEY;
+                }
 
                 if (key2 == System.ConsoleKey.R || Convert.ToChar(key2) == Convert.ToChar("r"))
                 {
@@ -326,9 +337,21 @@ namespace Escape
             {
 
 
+                INVAILDKEY2:;
+
                 System.ConsoleKey key3 = System.ConsoleKey.B;
 
                 key3 = Console.ReadKey(true).Key;
+
+
+                if  (Convert.ToChar(key3) != Convert.ToChar("q")
+                    && Convert.ToChar(key3) != Convert.ToChar("r")
+                    && key3 != System.ConsoleKey.R
+                    && key3 != System.ConsoleKey.Q
+                    && key3 != System.ConsoleKey.B)
+                {
+                    goto INVAILDKEY2;
+                }
 
                 if (key3 == System.ConsoleKey.R || Convert.ToChar(key3) == Convert.ToChar("r"))
                 {
