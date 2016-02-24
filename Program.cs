@@ -261,9 +261,8 @@ namespace Escape
                     Move.move(player, x, HW, VW, Torch, Exit);
                     goto NEXTMOVE;
 
-                    #endregion
-
-                }
+                  }
+                #endregion
 
                 #region <Quit Premature>
 
