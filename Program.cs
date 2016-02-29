@@ -109,15 +109,13 @@ namespace Escape
             {
 
                 #region <Invalid Key pushed>
-                if (    key  != System.ConsoleKey.DownArrow
+                if (    key != System.ConsoleKey.DownArrow
                     &&  key != System.ConsoleKey.UpArrow
                     &&  key != System.ConsoleKey.LeftArrow
                     &&  key != System.ConsoleKey.RightArrow
                     &&  key != System.ConsoleKey.Q
                     &&  Convert.ToChar(key) != Convert.ToChar("q")
-                    &&  key != System.ConsoleKey.B
-                    &&  key == System.ConsoleKey.H 
-                    &&  Convert.ToChar(key) == Convert.ToChar("h"))
+                    &&  key != System.ConsoleKey.B)
                 {
                     goto NEXTMOVE;
                 }
