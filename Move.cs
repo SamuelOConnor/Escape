@@ -11,18 +11,16 @@ namespace Escape
         public static void move(int player, int moves, int UseHP, int hp, List<int> HW, List<int> VW, List<int> Torch, List<int> Exit)
         {
             string hpUsed;
-           
+
 
             if (UseHP == 1)
-            {
-
-                hpUsed = moves + " Steps till freeze   That warmed you up! " + hp + " Heat Packs remaining ";
-            }
+                { hpUsed = moves + " Steps till freeze   That warmed you up! " + hp + " Heat Packs remaining "; }
             else
-                hpUsed = moves + " Steps till freeze                       " + hp + " Heat Packs remaining ";
+                { hpUsed = moves + " Steps till freeze                       " + hp + " Heat Packs remaining "; }
 
 
-            // First Line
+            #region <First Line>
+
             int a1 = (player + 3) - 2000;
             int a2 = (player + 3) - 1000;
             int a3 = (player + 3);
@@ -34,8 +32,9 @@ namespace Escape
             string A3 = Surroundings.move(a3, HW, VW, Torch, Exit);
             string A4 = Surroundings.move(a4, HW, VW, Torch, Exit);
             string A5 = Surroundings.move(a5, HW, VW, Torch, Exit);
+            #endregion
 
-            //Second Line
+            #region <Second Line>
             int b1 = (player + 2) - 5000;
             int b2 = (player + 2) - 4000;
             int b3 = (player + 2) - 3000;
@@ -60,7 +59,9 @@ namespace Escape
             string B10 = Surroundings.move(b10, HW, VW, Torch, Exit);
             string B11 = Surroundings.move(b11, HW, VW, Torch, Exit);
 
-            //Third Line
+            #endregion
+
+            #region <Third Line>
             int c1 = (player + 1) - 7000;
             int c2 = (player + 1) - 6000;
             int c3 = (player + 1) - 5000;
@@ -93,7 +94,9 @@ namespace Escape
             string C14 = Surroundings.move(c14, HW, VW, Torch, Exit);
             string C15 = Surroundings.move(c15, HW, VW, Torch, Exit);
 
-            //Fourth Line
+            #endregion
+
+            #region <Fourth Line>
             int d1 = (player) - 8000;
             int d2 = (player) - 7000;
             int d3 = (player) - 6000;
@@ -128,7 +131,9 @@ namespace Escape
             string D15 = Surroundings.move(d15, HW, VW, Torch, Exit);
             string D16 = Surroundings.move(d16, HW, VW, Torch, Exit);
 
-            //Fifth Line
+            #endregion
+
+            #region <Fifth Line>
             int e1 = (player - 1) - 8000;
             int e2 = (player - 1) - 7000;
             int e3 = (player - 1) - 6000;
@@ -165,7 +170,10 @@ namespace Escape
             string E16 = Surroundings.move(e16, HW, VW, Torch, Exit);
             string E17 = Surroundings.move(e17, HW, VW, Torch, Exit);
 
-            //Sixth Line
+            #endregion
+
+            #region <Sixth Line>
+
             int f1 = (player - 2) - 7000;
             int f2 = (player - 2) - 6000;
             int f3 = (player - 2) - 5000;
@@ -198,7 +206,10 @@ namespace Escape
             string F14 = Surroundings.move(f14, HW, VW, Torch, Exit);
             string F15 = Surroundings.move(f15, HW, VW, Torch, Exit);
 
-            //Seventh Line
+            #endregion
+
+            #region <Seventh Line>
+
             int g1 = (player - 3) - 5000;
             int g2 = (player - 3) - 4000;
             int g3 = (player - 3) - 3000;
@@ -223,7 +234,10 @@ namespace Escape
             string G10 = Surroundings.move(g10, HW, VW, Torch, Exit);
             string G11 = Surroundings.move(g11, HW, VW, Torch, Exit);
 
-            // Eighth Line
+            #endregion
+
+            #region <Eighth Line>
+            
             int h1 = (player - 4) - 2000;
             int h2 = (player - 4) - 1000;
             int h3 = (player - 4);
@@ -236,33 +250,32 @@ namespace Escape
             string H4 = Surroundings.move(h4, HW, VW, Torch, Exit);
             string H5 = Surroundings.move(h5, HW, VW, Torch, Exit);
 
+            #endregion
 
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(@"| ___|/ ___| /  __|/  _  \ /  __ || ___| | |");
-            Console.WriteLine(@"| |__ | \__ |  /   | |_| | | |_| || |__  | |");
-            Console.WriteLine(@"| ___| \__ \| |    |  __ | |  __/ | ___| |_|");
-            Console.WriteLine(@"| |__  __/ ||  \__ | | | | | |    | |__   _ ");
-            Console.WriteLine(@"|____||___/  \____||_| |_| |_|    |____| |_|");
-            Console.WriteLine(" ");
-            Console.WriteLine("You've awoken in a dark room, it's absolutely freezing!");
-            Console.WriteLine("Find the exit quick before you freeze!");
-            Console.WriteLine("                         ");
-            Console.WriteLine("< Move using a,w,s,d  or quit using q                      >");
-            Console.WriteLine("< Use torches Y to keep you warm while you find the exit O >");
-            Console.WriteLine("                         ");
+
+            Console.WriteLine(@"| ___|/ ___| /  __|/  _  \ /  __ || ___| | |                      ");
+            Console.WriteLine(@"| |__ | \__ |  /   | |_| | | |_| || |__  | |                      ");
+            Console.WriteLine(@"| ___| \__ \| |    |  __ | |  __/ | ___| |_|                      ");
+            Console.WriteLine(@"| |__  __/ ||  \__ | | | | | |    | |__   _                       ");
+            Console.WriteLine(@"|____||___/  \____||_| |_| |_|    |____| |_|                      ");
+            Console.WriteLine("                                                                   ");
+            Console.WriteLine("You've awoken in a dark room, it's absolutely freezing!            ");
+            Console.WriteLine("Find the exit quick before you freeze!                             ");
+            Console.WriteLine("                                                                   ");
+            Console.WriteLine("< Move using a,w,s,d  or quit using q                      >       ");
+            Console.WriteLine("< Use torches Y to keep you warm while you find the exit O >       ");
+            Console.WriteLine("                                                                   ");
             Console.WriteLine(hpUsed);
-            Console.WriteLine("                      ");
-            
-            Console.WriteLine("          {0}{1}{2}{3}{4}          ", A1, A2, A3, A4, A5);
-            Console.WriteLine("       {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}       ", B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11);
-            Console.WriteLine("     {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}     ", C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15);
-            Console.WriteLine("    {0}{1}{2}{3}{4}{5}{6}{7}@{8}{9}{10}{11}{12}{13}{14}{15}    ", D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, D15, D16);
-            Console.WriteLine("    {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}    ", E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12, E13, E14, E15, E16, E17);
-            Console.WriteLine(@"     {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}     ", F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14, F15);
-            Console.WriteLine(@"       {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}       ", G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, G11);
-            Console.WriteLine(@"          {0}{1}{2}{3}{4}          ", H1, H2, H3, H4, H5);
-            Console.WriteLine("                        ");
+            Console.WriteLine("                                                                   ");
+            Console.WriteLine("          {0}{1}{2}{3}{4}                                          ", A1, A2, A3, A4, A5);
+            Console.WriteLine("       {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}                          ", B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11);
+            Console.WriteLine("     {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}            ", C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15);
+            Console.WriteLine("    {0}{1}{2}{3}{4}{5}{6}{7}@{8}{9}{10}{11}{12}{13}{14}{15}        ", D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, D15, D16);
+            Console.WriteLine("    {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}     ", E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12, E13, E14, E15, E16, E17);
+            Console.WriteLine(@"     {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}           ", F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14, F15);
+            Console.WriteLine(@"       {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}                         ", G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, G11);
+            Console.WriteLine(@"          {0}{1}{2}{3}{4}                                         ", H1, H2, H3, H4, H5);
+            Console.WriteLine("                                                                   ");
         }
     }
 }
